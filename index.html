@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ashutosh Soni</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #666666;
+      --link: #111111;
+    }
+
+    [data-theme="dark"] {
+      --bg: #111111;
+      --text: #eeeeee;
+      --muted: #888888;
+      --link: #eeeeee;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.25rem;
+      line-height: 1.8;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem 6rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      margin-bottom: 0.15rem;
+      letter-spacing: -0.01em;
+    }
+
+    .tagline {
+      color: var(--muted);
+      font-style: italic;
+      font-size: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    p { margin-bottom: 1rem; }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 2.5rem 0 0.8rem;
+      font-family: Georgia, serif;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 0.1rem 0;
+    }
+
+    ul li::before {
+      content: "– ";
+      color: var(--muted);
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #aaaaaa;
+    }
+
+    a:hover {
+      text-decoration-color: var(--text);
+    }
+
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.2rem 1.4rem;
+      margin-top: 0.4rem;
+    }
+
+    .socials a {
+      font-size: 1rem;
+    }
+
+    .toggle {
+      position: fixed;
+      top: 1.4rem;
+      right: 1.5rem;
+      background: none;
+      border: 1px solid var(--muted);
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.6rem;
+      cursor: pointer;
+      border-radius: 3px;
+      letter-spacing: 0.05em;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .toggle:hover { color: var(--text); border-color: var(--text); }
+
+    [data-theme="dark"] hr { border-top-color: #2a2a2a; }
+
+    .blog-date {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle" onclick="toggleTheme()" aria-label="Toggle theme">◐</button>
+
+  <div class="wrap">
+    <h1>Ashutosh Soni</h1>
+    <p class="tagline">Computer Engg. Undergrad · Coimbatore / Bengaluru</p>
+
+    <p>
+      I'm an incoming junior (third) year undergrad interested in machine learning, quantitative research, and systems programming.
+      I like understanding things from first principles and tend to follow ideas wherever they lead, from theory to implementation.
+    </p>
+    <p>
+      Currently a Research Consultant at <a href="https://www.worldquant.com/" target="_blank">WorldQuant</a>, making alphas.<br>
+      Also active in competitive programming on Codeforces, AtCoder, and CodeChef (not lately, lol).
+    </p>
+    <p>
+      Liverpool fan. Football and badminton off the screen.
+    </p>
+    <h2>Stuff I know</h2>
+    <ul>
+        <li>Languages- C, C++, Python, Currently Learning Rust </li>
+        <li>Libraries - NumPy, PANDAS, Scikit Learn, Pytorch </li>
+        <li>Also worked with Tensorflow and XGBoost </li>
+        <li>DB- MySQL </li>
+    </ul>
+    <h2>Currently working on</h2>
+    <ul>
+      <li>Finding Alphas at <a href="https://worldquantbrain.com/consultant" target="_blank">Worldquant Brain</a></li>
+      <li>Trading engine in Rust with a research agent component</li>
+      <li>Currently Reading and Implementing papers — <a href="https://arxiv.org/abs/2402.11187" target="_blank"> Layer Collapse</a></li>
+      <li>Problem solving for fun on Codeforces and AtCoder</li>
+    </ul>
+
+    <h2>Writing</h2>
+    <ul>
+        <li>Sometimes on <a href="https://medium.com/@ashusoni1505" target="_blank">medium.com/@ashusoni1505</a> Medium</li>
+    </ul>
+   
+    <h2>Projects</h2>
+    <ul>
+      <li><a href="https://github.com/ASHUTOSH-06-SONI/trading-engine" target="_blank">Trading Engine</a> — low-latency engine in Rust</li>
+      <li><a href="https://github.com/ASHUTOSH-06-SONI/SpeculativeDecoding" target="_blank">Speculative Decoding</a> — faster LLM inference</li>
+      <li><a href="https://github.com/ASHUTOSH-06-SONI/Missing-IV-s-Prediction" target="_blank">Missing IV Prediction</a> — options surface interpolation</li>
+      <li><a href="https://github.com/ASHUTOSH-06-SONI/Supply_Chain_Optimization" target="_blank">Supply Chain Optimization</a> — GenAI + AWS hackathon</li>
+    </ul>
+
+    <h2>Find me</h2>
+    <div class="socials">
+      <a href="https://github.com/ASHUTOSH-06-SONI" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/ashutosh-soni-47813a329/" target="_blank">LinkedIn</a>
+      <a href="https://x.com/Warrior_1501" target="_blank">Twitter / X</a>
+      <a href="https://codeforces.com/profile/warrior_15" target="_blank">Codeforces</a>
+      <a href="https://atcoder.jp/users/skill_issue" target="_blank">AtCoder</a>
+      <a href="https://medium.com/@ashusoni1505" target="_blank">Medium</a>
+    </div>
+  </div>
+
+  <script>
+    const saved = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', saved);
+
+    function toggleTheme() {
+      const cur = document.documentElement.getAttribute('data-theme');
+      const next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+  </script>
+</body>
+</html>
