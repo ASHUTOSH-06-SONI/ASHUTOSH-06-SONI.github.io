@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mind Space — Ashutosh Soni</title>
+
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -26,15 +28,16 @@
       background: var(--bg);
       color: var(--text);
       font-family: 'EB Garamond', Georgia, serif;
-      font-size: 1.25rem;
-      line-height: 1.8;
+      font-size: 1.38rem;
+      line-height: 1.95;
       transition: background 0.2s, color 0.2s;
     }
 
     .wrap {
-      max-width: 680px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 5rem 1.5rem 6rem;
+      padding: 5rem 2rem 6rem;
+
     }
 
     nav {
@@ -49,7 +52,10 @@
       text-decoration: none;
     }
 
-    nav a:hover, nav a.active { color: var(--text); }
+    nav a:hover,
+    nav a.active {
+      color: var(--text);
+    }
 
     hr {
       border: none;
@@ -57,12 +63,14 @@
       margin: 0 0 3rem;
     }
 
-    [data-theme="dark"] hr { border-top-color: #222222; }
+    [data-theme="dark"] hr {
+      border-top-color: #222222;
+    }
 
-    h1 {
-      font-size: 1.6rem;
+    h1{
+      font-size: 2.4rem;
       font-weight: 500;
-      margin-bottom: 0.15rem;
+      margin-bottom: 0.5rem;
       letter-spacing: -0.01em;
     }
 
@@ -79,8 +87,13 @@
       border-bottom: 1px solid #e8e8e8;
     }
 
-    [data-theme="dark"] .post { border-bottom-color: #1e1e1e; }
-    .post:last-of-type { border-bottom: none; }
+    [data-theme="dark"] .post {
+      border-bottom-color: #1e1e1e;
+    }
+
+    .post:last-of-type {
+      border-bottom: none;
+    }
 
     .post h2 {
       font-size: 1.25rem;
@@ -128,13 +141,12 @@
       font-style: italic;
     }
 
-    .tag::before { content: "#"; }
-    .tag:hover { color: var(--text); }
+    .tag::before {
+      content: "#";
+    }
 
-    .empty {
-      color: var(--muted);
-      font-style: italic;
-      font-size: 1rem;
+    .tag:hover {
+      color: var(--text);
     }
 
     .toggle {
@@ -152,51 +164,64 @@
       transition: color 0.2s, border-color 0.2s;
     }
 
-    .toggle:hover { color: var(--text); border-color: var(--text); }
+    .toggle:hover {
+      color: var(--text);
+      border-color: var(--text);
+    }
   </style>
 </head>
+
 <body>
-  <button class="toggle" onclick="toggleTheme()">◐</button>
 
-  <div class="wrap">
-    <nav>
-        <a href="/index.html">about</a>
-      <a href="/notes.html" class="active">notes</a>
-    </nav>
+<button class="toggle" onclick="toggleTheme()">◐</button>
 
-    <hr />
+<div class="wrap">
 
-    <h1>Mind Space</h1>
-    <p class="tagline">Personal writing — thoughts, reflections.</p>
+  <nav>
+    <a href="/index.html">about</a>
+    <a href="/notes.html" class="active">notes</a>
+  </nav>
 
-    <!-- Add posts below. Copy a .post block for each new entry. -->
+  <hr />
 
-    <!--
-    <div class="post">
-      <h2><a href="/notes/your-note-slug.html">Your Note Title Here</a></h2>
-      <p class="post-meta">2026-03-15 · Ashutosh Soni</p>
-      <p class="post-tagline">One line about what this is.</p>
-      <div class="tags">
-        <a class="tag" href="#">life</a>
-        <a class="tag" href="#">random</a>
-      </div>
+  <h1>Mind Space</h1>
+  <p class="tagline">Personal writing — thoughts, reflections.</p>
+
+  <div class="post">
+    <h2><a href="/hitting-walls.html">Hitting Walls</a></h2>
+
+    <p class="post-meta">
+      2026-05-18 · Ashutosh Soni
+    </p>
+
+    <p class="post-tagline">
+      Burnout, context switching, all-nighters, research,
+      self doubt and trying to figure out where all of this is headed.
+    </p>
+
+    <div class="tags">
+      <a class="tag" href="#">life</a>
+      <a class="tag" href="#">burnout</a>
+      <a class="tag" href="#">thoughts</a>
+      <a class="tag" href="#">research</a>
     </div>
-    -->
-
-    <p class="empty">Nothing yet — soon.</p>
-
   </div>
 
-  <script>
-    const saved = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', saved);
+</div>
 
-    function toggleTheme() {
-      const cur = document.documentElement.getAttribute('data-theme');
-      const next = cur === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-    }
-  </script>
+<script>
+  const saved = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', saved);
+
+  function toggleTheme() {
+    const cur = document.documentElement.getAttribute('data-theme');
+    const next = cur === 'dark' ? 'light' : 'dark';
+
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  }
+</script>
+
 </body>
 </html>
+```
