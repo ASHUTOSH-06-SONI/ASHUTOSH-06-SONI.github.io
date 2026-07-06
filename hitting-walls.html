@@ -211,8 +211,7 @@ Ashu a.k.a Skill issue :)
 </div>
 
 <script>
-  const saved = localStorage.getItem('theme') || 'light';
-  document.documentElement.setAttribute('data-theme', saved);
+    const saved = localStorage.getItem('theme') || 'dark';
 
   function toggleTheme() {
     const cur = document.documentElement.getAttribute('data-theme');
