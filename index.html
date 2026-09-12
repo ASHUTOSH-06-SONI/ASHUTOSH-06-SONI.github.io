@@ -192,14 +192,24 @@
   </div>
 
   <script>
-    const saved = localStorage.getItem('theme') || 'dark';
+    const storage = (() => {
+      try {
+        return window.localStorage;
+      } catch (e) {
+        return null;
+      }
+    })();
+
+    const saved = storage ? storage.getItem('theme') || 'dark' : 'dark';
     document.documentElement.setAttribute('data-theme', saved);
 
     function toggleTheme() {
       const cur = document.documentElement.getAttribute('data-theme');
       const next = cur === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
+      if (storage) {
+        storage.setItem('theme', next);
+      }
     }
   </script>
 </body>
