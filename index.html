@@ -92,6 +92,69 @@
       text-decoration-color: var(--text);
     }
 
+    .info-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 0;
+      align-items: start;
+      margin-top: 1.5rem;
+    }
+
+    .info-panel {
+      padding: 0 1.5rem 0 0;
+    }
+
+    .info-panel + .info-panel {
+      position: relative;
+      padding-left: 1.5rem;
+      padding-right: 0;
+    }
+
+    .info-panel + .info-panel::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 1px;
+      background: #d6d6d6;
+    }
+
+    [data-theme="dark"] .info-panel + .info-panel::before {
+      background: #ffffff;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem 1rem;
+      margin-top: 0.7rem;
+    }
+
+    .project-card {
+      display: block;
+      text-decoration: none;
+      color: var(--text);
+      transition: opacity 0.2s ease;
+      padding: 0.2rem 0;
+    }
+
+    .project-card:hover {
+      opacity: 0.8;
+    }
+
+    .project-card strong {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+
+    .project-card span {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
     .socials {
       display: flex;
       flex-wrap: wrap;
@@ -143,44 +206,64 @@
     <p>
       Currently a Research Consultant at <a href="https://www.worldquant.com/" target="_blank">WorldQuant</a>, making alphas.<br>
       Also active in competitive programming on <a href="https://codeforces.com/profile/warrior_15" target="_blank">Codeforces</a>, <a href="https://atcoder.jp/users/skill_issue" target="_blank">AtCoder</a>, and <a href="https://www.codechef.com/users/skill_issue15" target="_blank">CodeChef</a> (not lately, lol).
-    </p>
+    </p> 
     <p>
       Liverpool fan. Football and badminton off the screen.
     </p>
     <p>You've made it this far, might as well see what goes on <a href="/notes.html">inside my head.</a></p>
-    <h2>Stuff I know</h2>
-    <ul>
-        <li>Languages- C, C++, Python, Currently Learning Rust </li>
-        <li>Libraries - NumPy, PANDAS, Scikit Learn, Pytorch </li>
-        <li>Also worked with Tensorflow and XGBoost </li>
-        <li>DB- MySQL </li>
-    </ul>
-    <h2>Currently working on</h2>
-    <ul>
-      <li>Finding Alphas at <a href="https://worldquantbrain.com/consultant" target="_blank">Worldquant Brain</a></li>
-      <li>Inference engine from scratch in Rust</li>
-      <li>Currently Reading and Implementing papers —
+    <div class="info-grid">
+      <div class="info-panel">
+        <h2>Stuff I know</h2>
         <ul>
-          <li><a href="https://arxiv.org/abs/2402.11187" target="_blank">Layer Collapse</a></li>
-          <li><a href="https://arxiv.org/abs/2006.11239" target="_blank">DDPM</a></li>
-          <li><a href="https://people.freebsd.org/~lstewart/articles/cpumemory.pdf" target="_blank">What Every Programmer Must Know About Memory</a></li>
-          <li><a href="https://arxiv.org/abs/2205.14135" target="_blank">Flash Attention</a></li>
-          <li><a href="https://arxiv.org/abs/2210.17323" target="_blank">GPTQ</a></li>
+          <li>Languages- C, C++, Python, Currently Learning Rust </li>
+          <li>Libraries - NumPy, PANDAS, Scikit Learn, Pytorch </li>
+          <li>Also worked with Tensorflow and XGBoost </li>
+          <li>DB- MySQL </li>
         </ul>
-      </li>
-      <li>Problem solving for fun on Codeforces, AtCoder and CSES</li>
-    </ul>
+
+        <h2>Currently working on</h2>
+        <ul>
+          <li>Finding Alphas at <a href="https://worldquantbrain.com/consultant" target="_blank">Worldquant Brain</a></li>
+          <li>Inference engine from scratch in Rust</li>
+          <li>Currently Reading and Implementing papers —
+            <ul>
+              <li><a href="https://arxiv.org/abs/2402.11187" target="_blank">Layer Collapse</a></li>
+              <li><a href="https://arxiv.org/abs/2006.11239" target="_blank">DDPM</a></li>
+              <li><a href="https://people.freebsd.org/~lstewart/articles/cpumemory.pdf" target="_blank">What Every Programmer Must Know About Memory</a></li>
+              <li><a href="https://arxiv.org/abs/2205.14135" target="_blank">Flash Attention</a></li>
+              <li><a href="https://arxiv.org/abs/2210.17323" target="_blank">GPTQ</a></li>
+            </ul>
+          </li>
+          <li>Problem solving for fun on Codeforces, AtCoder and CSES</li>
+        </ul>
+      </div>
+
+      <div class="info-panel">
+        <h2>Projects</h2>
+        <div class="project-grid">
+          <a class="project-card" href="https://github.com/ASHUTOSH-06-SONI/trading-engine" target="_blank">
+            <strong>Trading Engine</strong>
+            <span>Low-latency engine in Rust.</span>
+          </a>
+          <a class="project-card" href="https://github.com/ASHUTOSH-06-SONI/SpeculativeDecoding" target="_blank">
+            <strong>Speculative Decoding</strong>
+            <span>Faster LLM inference.</span>
+          </a>
+          <a class="project-card" href="https://github.com/ASHUTOSH-06-SONI/Missing-IV-s-Prediction" target="_blank">
+            <strong>IV Surface reconstruction</strong>
+            <span>Options surface interpolation.</span>
+          </a>
+          <a class="project-card" href="https://github.com/ASHUTOSH-06-SONI/Pruning_LayerCollapse" target="_blank">
+            <strong>Pruning LayerCollapse</strong>
+            <span>Efficient transformer pruning.</span>
+          </a>
+        </div>
+      </div>
+    </div>
 
     <h2>Writing</h2>
     <ul>
       <li>Sometimes on <a href="https://medium.com/@ashusoni1505" target="_blank">Medium</a> and <a href="https://substack.com/@skillissue15" target="_blank">Substack</a></li>
-    </ul>
-    <h2>Projects</h2>
-    <ul>
-      <li><a href="https://github.com/ASHUTOSH-06-SONI/trading-engine" target="_blank">Trading Engine</a> — low-latency engine in Rust</li>
-      <li><a href="https://github.com/ASHUTOSH-06-SONI/SpeculativeDecoding" target="_blank">Speculative Decoding</a> — faster LLM inference</li>
-      <li><a href="https://github.com/ASHUTOSH-06-SONI/Missing-IV-s-Prediction" target="_blank">IV Surface reconstruction</a> — options surface interpolation</li>
-      <li><a href="https://github.com/ASHUTOSH-06-SONI/Pruning_LayerCollapse" target="_blank">Pruning LayerCollapse</a> — pruning for efficient layer-collapse recovery in Transformer models</li>
     </ul>
 
     <h2>Find me</h2>
