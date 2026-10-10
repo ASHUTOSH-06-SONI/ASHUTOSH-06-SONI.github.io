@@ -156,13 +156,13 @@
     .project-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 1rem;
+      gap: 1.1rem 1.4rem;
       margin-top: 0.7rem;
     }
 
     @media (min-width: 480px) {
       .project-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
       }
     }
 
@@ -171,7 +171,12 @@
       text-decoration: none;
       color: var(--text);
       transition: opacity 0.2s ease;
-      padding: 0.5rem 0;
+      padding: 0.65rem 0;
+      border-top: 1px solid #d6d6d6;
+    }
+
+    [data-theme="dark"] .project-card {
+      border-top-color: #333333;
     }
 
     .project-card:hover {
@@ -266,15 +271,15 @@
         <ul>
           <li>Finding Alphas at <a href="https://worldquantbrain.com/consultant" target="_blank">Worldquant Brain</a></li>
           <li>Inference engine from scratch in Rust</li>
-          <li>Currently Reading and Implementing papers —
-            <ul>
-              <li><a href="https://arxiv.org/abs/2205.14135" target="_blank">Flash Attention</a></li>
-              <li><a href="https://arxiv.org/abs/2006.11239" target="_blank">DDPM</a></li>
-              <li><a href="https://people.freebsd.org/~lstewart/articles/cpumemory.pdf" target="_blank">What Every Programmer Must Know About Memory</a></li>
-              <li><a href="https://arxiv.org/abs/2210.17323" target="_blank">GPTQ</a></li>
-            </ul>
-          </li>
           <li>Problem solving for fun on Codeforces, AtCoder and CSES</li>
+        </ul>
+
+        <h2>Reading / Implementing</h2>
+        <ul>
+          <li><a href="https://arxiv.org/abs/2205.14135" target="_blank">Flash Attention</a></li>
+          <li><a href="https://arxiv.org/abs/2006.11239" target="_blank">DDPM</a></li>
+          <li><a href="https://people.freebsd.org/~lstewart/articles/cpumemory.pdf" target="_blank">What Every Programmer Must Know About Memory</a></li>
+          <li><a href="https://arxiv.org/abs/2210.17323" target="_blank">GPTQ</a></li>
         </ul>
       </div>
 
